@@ -83,5 +83,11 @@ class Mahasiswa extends CI_Controller {
         $this->Mahasiswa_model->hapus_data($where, 'tm-user');
         redirect('Mahasiswa');
     }
+    public function logout()
+    {
+        $this->session->unset_userdata(array('username' => ''));
+        redirect('Login');
+
+    }
 }
 ?>
